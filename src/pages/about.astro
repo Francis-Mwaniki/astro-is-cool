@@ -1,0 +1,85 @@
+---
+const name = 'Francis';
+
+const greeting =() =>{
+    const time = new Date().getHours();
+    if(time < 12){
+        return 'Good Morning';
+    }else if(time < 18){
+        return 'Good Afternoon';
+    }else{
+        return 'Good Evening';
+    }
+}
+
+const localTime = new Date().toLocaleTimeString();
+---
+<div>
+    <h1>About page</h1>
+    <div class="card">
+
+        <div class="card-body">
+            <div class="alert alert-primary" role="alert">
+                Well this is cool {name}
+            </div>
+            <div class="">
+               {greeting()}, {name}</h2>
+           
+            <p>Current time is {localTime}</p>
+      </div>
+ 
+
+      <a class="posts-links">
+        <a href="/posts/post-1">Posts 1</a>
+        <a href="/post/post-2">Posts 2</a>
+      </a>
+    </div>
+    <h2>   
+ 
+</div>
+
+<style>
+
+ .card{
+     width: 18rem;
+     margin: 0 auto;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     padding: 10px;
+     text-align: center;
+ }
+    .card-img-top{
+        border-radius: 5px;
+    }
+
+    .card-body{
+        padding: 0;
+    }
+    .card:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.2);
+    }
+
+    .card-body{
+        position: relative;
+        z-index: 1;
+    }
+    
+    .posts-links{
+        display: flex;
+        justify-content: space-between;
+        text-decoration: dashed;
+
+        margin-top: 20px;
+    }
+    .posts-links a{
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #000;
+    }
+    .posts-links a:hover{
+        background-color: #ccc;
+    }
+
+</style>
