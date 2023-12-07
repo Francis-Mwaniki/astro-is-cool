@@ -1,20 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Foot from '../components/Footer.astro';
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Francis",
+  country: "Kenya",
+  occupation: "Software Developer",
+  hobbies: ["Coding", "Writing", "Reading", "Gaming"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skillColor = "red";
 ---
 
 <Layout title="Welcome to Astro.">
 	<div class="container">
-		<h2>Hello francis</h2>
+		<h2 class="about-h1">About Me</h2>
+		<p>
+			Hi, I'm {identity.firstName}. I live in {identity.country} and I'm a {identity.occupation}. I like {identity.hobbies.join(', ')}.
+		</p>
+		<h2 class="about-h1">Skills</h2>
+		<ul class="about-ul">
+			{skills.map((skill) => (
+				<li class="about-li">{skill}</li>
+			))}
 
-	<div class="about">
-		<h3 class="about-h1">This my about</h3>
-		<a class="about-a" href="/about">About</a>
+		
 	</div>
-	</div>
+	<a href="/about" class="about-a">About Me</a>
+
+	<Foot />
 </Layout>
 
-<style>
+<style define:vars={{skillColor}}>
 
 	.about {
 		display: flex;
@@ -31,6 +51,9 @@ import Card from '../components/Card.astro';
 		text-decoration: none;
 		color: #fff;
 		background-color: #000;
+		border: 1px solid #000;
+		margin-bottom: 2rem;
+		cursor: pointer;
 		padding: 0.5rem 1rem;
 		border-radius: 0.5rem;	
 		
@@ -77,5 +100,20 @@ import Card from '../components/Card.astro';
 		
 		align-items: center;
 		justify-content: center;
+	}
+
+	.about-ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+		color: var(--skillColor);
+	}
+
+	.about-li {
+		font-size: 1.5rem;
 	}
 </style>
