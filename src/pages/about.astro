@@ -1,5 +1,11 @@
 ---
+import '../css/global.css'
+import Card from "../components/Card.astro";
+import Footer from '../components/Footer.astro';
 const name = 'Francis';
+const body="Hi, I'm Francis, a full-stack developer with 10+ years of experience. "
+const href = 'https://www.linkedin.com/in/francis-udoh-1b4b0b1a0/';
+const title = 'Francis Udoh';
 
 const greeting =() =>{
     const time = new Date().getHours();
@@ -31,11 +37,13 @@ const localTime = new Date().toLocaleTimeString();
 
       <a class="posts-links">
         <a href="/posts/post-1">Posts 1</a>
-        <a href="/post/post-2">Posts 2</a>
+        <a href="/posts/post-2">Posts 2</a>
+        <a href="/posts/post-3">Posts 3</a>
       </a>
     </div>
     <h2>   
- 
+<Card title={title} body={body} href={href} />
+ <Footer />
 </div>
 
 <style>

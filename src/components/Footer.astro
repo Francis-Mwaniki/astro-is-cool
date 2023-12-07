@@ -1,0 +1,28 @@
+---
+import Social from '../components/Social.astro'
+---
+
+<footer>
+ <Social username="joshuar" platform="twitter" />
+ <Social username="joshuar" platform="github" />
+    <Social username="joshuar" platform="linkedin" />
+    <Social username="joshuar" platform="instagram" />
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+        gap: 1rem;
+        
+    }
+
+    @media (max-width: 600px) {
+        footer {
+            flex-direction: column;
+        }
+    }
+
+</style>
